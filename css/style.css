@@ -204,6 +204,11 @@ section {
         background-color: rgba(0, 0, 0, 0);
         text-align: center;
     }
+    
+        .projects-top div h1 {
+            font-weight: 100;
+        }
+
 
     .projects-table {
         background-color: rgba(0, 0, 0, 0);
@@ -279,6 +284,77 @@ section {
 
 
 
+/* SECTION: Social Media */
+
+.socials {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+    .socials-top div {
+        margin: 0 auto;
+        width: 170px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+    }
+
+        .socials-top div h1 {
+            font-weight: 100;
+        }
+
+    .socials .fa {
+        box-sizing: content-box;
+        font-size: 70px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0px 3px;
+        bottom: 0px;
+        transition: 100ms ease-in-out;
+        color: white;
+    }
+
+        .socials .fa-spotify:hover {
+            color: rgba(129, 183, 26, 1);
+        }
+
+        .socials .fa-soundcloud:hover {
+            color: rgba(254, 80, 0, 1);
+        }
+
+        .socials .fa-youtube:hover {
+            color: rgba(187, 0, 0, 1);
+        }
+
+        .socials .fa-linkedin:hover {
+            color: rgba(2, 119, 182, 1);
+        }
+
+        .socials .fa-instagram:hover {
+            color: rgba(188, 42, 141, 1);
+        }
+
+        .socials .fa-facebook:hover {
+            color: rgba(66, 103, 178, 1);
+        }
+
+        .socials .fa-snapchat:hover {
+            color: rgba(255, 252, 0, 1);
+        }
+
+        .socials .fa-github:hover {
+            color: rgba(232, 234, 234, 1);
+        }
+
+        .socials .fa-gitlab:hover {
+            color: rgba(252, 109, 38, 1);
+        }
+
+
+
+
 /* SECTION: Footer */
 
 footer {
@@ -286,62 +362,6 @@ footer {
     position: relative;
     height: 50px;
 }
-
-    /* Social Media */
-    #socials {
-        position: absolute;
-        right: 6px;
-        font-size: 0;
-    }
-
-        #socials .fa {
-            box-sizing: content-box;
-            font-size: 44px;
-            text-align: center;
-            text-decoration: none;
-            margin: 0px 3px;
-            bottom: 0px;
-            transition: 100ms ease-in-out;
-            color: white;
-        }
-
-            #socials .fa-spotify:hover {
-                color: rgba(129, 183, 26, 1);
-            }
-
-            #socials .fa-soundcloud:hover {
-                color: rgba(254, 80, 0, 1);
-            }
-
-            #socials .fa-youtube:hover {
-                color: rgba(187, 0, 0, 1);
-            }
-
-            #socials .fa-linkedin:hover {
-                color: rgba(2, 119, 182, 1);
-            }
-
-            #socials .fa-instagram:hover {
-                color: rgba(188, 42, 141, 1);
-            }
-
-            #socials .fa-facebook:hover {
-                color: rgba(66, 103, 178, 1);
-            }
-
-            #socials .fa-snapchat:hover {
-                color: rgba(255, 252, 0, 1);
-            }
-
-            #socials .fa-github:hover {
-                color: rgba(232, 234, 234, 1);
-            }
-
-            #socials .fa-gitlab:hover {
-                color: rgba(252, 109, 38, 1);
-            }
-
-
 
 
 
