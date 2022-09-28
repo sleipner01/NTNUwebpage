@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Magnus Byrkjeland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="icon" href="media/imgs/barney_cheers.png">
+    <script src="https://kit.fontawesome.com/724ce007b4.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/smoothScroll.js"></script>
+</head>
+<body>
+
+    <!-- Floating navigation bar -->
+    <nav class="page-nav" id="nav">
+        <a href="#search"><p>Search</p></a>
+        <a href="#about"><p>About me</p></a>
+        <a href="#projects"><p>Projects</p></a>
+    </nav>
+
+    <section class="header" id="0">
+
+        <video autoplay muted loop class="header-video" id="top">
+            <source src="media/videos/header-video1440.mp4">
+        </video>
+            
+        <!-- Blackish filter above the video -->
+        <div class="filter" id="search"></div>
+
+        <!-- Excess elements in the header -->
+        <div class="front-page" id="front-page">
+            <div class="logo-container">
+                <img src="media/imgs/sleipner-hvit.png" alt="Sleipner Inc." class="logo" width="300px">
+            </div>
+            <!-- <div class="search-container">
+                <form>
+                    <input type="search" class="search" placeholder="Search for something..">
+                </form>
+            </div> -->
+        </div>
+        
+        <div style="position:absolute; z-index: 6; top: 0; bottom: 0; left: 0; right: 0;" id="ricky"></div>
+
+    </section>
+    
+    <!-- About page -->
+    <section class="about" id="1">
+        <div class="about-container" id="about">
+            <div class="about-img" style="background-image: url(media/imgs/Magnus_alkis.png); background-position-x: -100px;"></div>
+            <div class="about-main">
+                <h1>About me</h1>
+                <p>20 years and still too young</p>
+            </div>
+        </div>
+    </section> 
+
+
+    <!-- Projects section -->
+    <section class="popular" id="2">
+        <div class="popular-top" id="projects">
+            <div>
+                <h1>Files</h1>
+            </div>
+        </div>
+
+        <!-- Table for files -->
+        <div class="popular-beats">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- Declaring header values -->
+                        <th></th> <!-- For avatars -->
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="projects/bordtennis/media/favicon.png" alt="TableTennis" width="70px"></td>
+                        <td>Table Tennis</td>
+                        <td class="description-container">Group assignment - Create a website for for a real or fictitous client | We created a website for NTNUI Table Tennis</td>
+                        <td>16.11.2021</td>
+                        <td class="files-link-container"><a href="projects/bordtennis/index.html" class="files-link">Go to the site</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="media/imgs/minesweeper-logo.png" alt="M" width="70px"></td>
+                        <td>Minesweeper</td>
+                        <td>Wanna play som Minesweeper? (Buggy)</td>
+                        <td>28.08.2021</td>
+                        <td><a href="projects/minesweeper/side.html" class="files-link">Go to the site</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="media/imgs/barney_cheers.png" alt="M" width="70px"></td>
+                        <td>HTML/SCSS Crash Course</td>
+                        <td>Quick learningproject</td>
+                        <td>2.09.2021</td>
+                        <td><a href="projects/crash-course-html/index.html" class="files-link">Go to the site</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+    <script src="js/sectionObserver.js"></script>
+
+    <script>
+        setTimeout(
+        function rickRolled() {
+            document.getElementById("ricky").innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1"></iframe>';
+        }
+        , 5000);
+
+
+        //Get rid of Rick
+        document.addEventListener('keydown', logKey);
+
+        function logKey(e) {
+            if(e.code == 'Escape') {
+                document.getElementById('ricky').innerHTML = "";
+                document.getElementById('ricky').style.display = "none";
+            }
+        }
+
+    </script>
+
+
+    <footer>
+        <div id="socials">
+            <!-- <a href="#" class="fa fa-spotify fa-fw" target="_blank"></a> -->
+            <!-- <a href="#" class="fa fa-soundcloud fa-fw"  target="_blank"></a> -->
+            <a href="https://www.facebook.com/magnus.byrkjeland/" class="fa fa-facebook fa-fw"  target="_blank"></a>
+            <a href="https://www.instagram.com/byrkjiz/" class="fa fa-instagram fa-fw"  target="_blank"></a>
+            <a href="media/imgs/snapcodeBitmoji.svg" class="fa fa-snapchat fa-fw"  target="_blank"></a>
+            <a href="https://github.com/sleipner01" class="fa fa-github fa-fw"  target="_blank"></a>
+            <a href="https://gitlab.stud.idi.ntnu.no/magnueb" class="fa fa-gitlab fa-fw"  target="_blank"></a>
+
+            <!-- <a href="https://www.youtube.com/channel/UCh93plE69-ha7Ouv0yQ_uDQ" class="fa fa-youtube fa-fw" target="_blank"></a> -->
+        </div>
+        
+        <div style="text-align: center; padding: 5px; font-size: 18px;"><a href="mailto:magnueb@stud.ntnu.no" style="color: white;">Magnus Byrkjeland</a></div>
+    </footer>
+
+
+</body>
+</html>

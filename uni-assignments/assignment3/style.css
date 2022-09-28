@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html, body{
+  margin: 0;
+  padding: 0 1.5em;
+  min-height: 100vh;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Part 4 */
+
+ul {
+  list-style-type: square;
+}
+
+ul ul li:last-child {
+  color: #FF6600;
+}

@@ -1,0 +1,20 @@
+.box{
+    /* Sets the size and position of each box */
+    width: 200px;
+    height: 200px;
+    background-color: #185D8B;
+    margin: 10px;
+
+    /* Sets the font within each box*/
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    line-height: 200px;
+    font-size: 100px;
+  }
+
+  .buttons{
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+  }
