@@ -317,6 +317,10 @@ footer {
                 color: rgba(187, 0, 0, 1);
             }
 
+            #socials .fa-linkedin:hover {
+                color: rgba(2, 119, 182, 1);
+            }
+
             #socials .fa-instagram:hover {
                 color: rgba(188, 42, 141, 1);
             }
