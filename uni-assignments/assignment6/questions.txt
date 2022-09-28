@@ -1,0 +1,9 @@
+1. 0.1 + 0.2 === 0.3 returns "false" because of how the computer works with binary numbers. The computer is not able to exactly replicate the decimalnumbers. The computer stores a value really close to 0.3, but not exactly. The same applies for 0.1 and 0.2, so the addition will never become exactly 0.3 / what the computer have stored as 0.3
+
+2. The "method" in a "form"-element desides how the values from the form will be transferred to the "action"-destination. The most used methods are "POST" and "GET". "GET" sends the information with the url, after a "?"-sign. "POST" hides the values in the request body of the HTTP request.
+
+3. The fields appear in the URL if we change the method to "GET" because thats how the "GET" method works. The values from the form are sent with the url to the destination. The syntax: url...?name1=value1&name2=value2&...
+
+4. It's bad practice because it only happens on the client side. With validation solely on the client-side, users may be experiencing faults if something is wrong with the HTML, JS is turned off or other situations. Client-side validation is easily bypassed by users with malicious intents. Therefore, combining server-side validation gives teh best safety, user experience and fast response. 
+
+5. It's appropriate to use <textarea> over <input> if the form requires the user to input a long text with no spesific syntax or meaning. <inputs> are good for names, numbers, dates,... consise values. <textarea> are good for: "Tell us about yourself", "describe what you saw", "Describe how you feel today" etc.

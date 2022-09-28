@@ -1,0 +1,12 @@
+1. Mobile phones usually ignore "autoplay" on video-elements in case the device uses mobile data.
+    To save the user from downloading uneccessary data and have to pay additional costs to the provider, video elements are "banned" from autoplaying.
+
+2. The snippet won't do anything special. It will use the default CSS or whatever is written in the original code.
+    The snippet will remove a logo if a screen has width between 768px and 1024px.
+
+3. Some advantages of having a single responsive website instead of different versions are:
+    - It's easier to control what website a user should use.
+      Instead of having to redirect a user based on a device, the user can visit the same url nomatter which device he og she is using.
+    - Also, developers don't have to store two versions of their site, which will use uneccessary space.
+    - If changes needs to be done, developers only have to do the changes once instead of having to do the same changes twice, 
+      which in worst case could make something go wrong. 

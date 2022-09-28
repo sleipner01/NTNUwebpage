@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tax forms: Bar chart with bars</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+  <body>
+
+    <canvas id="chart" width="700" height="550"></canvas>
+
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      /* Draw a line from (fromX, fromY) to (toX, toY) */
+      function drawLine(fromX, fromY, toX, toY) {
+        context.beginPath();
+        context.moveTo(toX, toY);
+        context.lineTo(fromX, fromY);
+        context.stroke();
+      }
+
+      /* Draw a text (string) on (x, y) */
+      function drawText(text, x, y) {
+        context.fillStyle = 'black';
+        context.fillText(text, x, y);
+      }
+
+      /* Draw a text and with a line to its right */
+      function drawLineWithText(text, fromX, fromY, toX, toY) {
+        drawText(text, fromX - 50, fromY + 10);
+        drawLine(fromX, fromY, toX, toY);
+      }
+
+
+      /* Insert your code here. */
+
+      
+      // Draw a rectangle
+      function drawRect(color, x, y, width, height) {
+        context.beginPath();
+        context.fillStyle = color;
+        context.fillRect(x, y, width, height);
+      }
+
+      // create canvas structure
+      function createCanvas(canvasHeight, canvasWidth, lineXOffset, lineYOffset, increment, numberOfLines, ratio) {
+        for(let i = 0; i < numberOfLines; i++) {
+          let lineValue = increment * (i+1);
+          let lineHeight = canvasHeight - (ratio * (i+1)) + lineYOffset; // Adding lineYOffset to lineHeight, to make the line at the top fully visible, insted of it being cropped.
+  
+          drawLineWithText(lineValue, lineXOffset, lineHeight, (canvasWidth-lineXOffset), lineHeight);
+        }
+      }
+
+      // Create labels on the right side in the canvas
+      function createLabels(labelMarginLeft, labelMarginBottom, labelWidth, labelHeight, labels, canvasWidth, canvasHeight, lineXOffset) {
+        labels.forEach( (label, index) => {
+          drawRect(label.color, (canvasWidth - lineXOffset + labelMarginLeft), (labelHeight*index + labelMarginBottom*index), labelWidth, labelHeight);
+          drawText(label.labelValue,  (canvasWidth - (lineXOffset/2 - 1.5*labelMarginLeft)), (labelHeight * (index+1) + labelMarginBottom*index) - labelMarginBottom);
+        })
+      }
+
+      function createBars(numberOfForms, canvasWidth, canvasHeight, barWidth, barGap, increment, numberOfLines, labels, lineXOffset) {
+        for(let i = 0; i < numberOfForms; i++) {
+          let realName = taxForms[i].realName;
+          console.log(realName);
+          let income = taxForms[i].income;
+          let wealth = taxForms[i].wealth;
+
+          // x value is an equation to place the bars evenly, and scalable. If we want to make the canvas wider and add more values, we can do so by only changing the canvas width, and tweaking the settings in main() to fit what should be outputted
+          drawRect(labels[0].color, (lineXOffset + (((canvasWidth - lineXOffset*2)/numberOfForms) * (i) + (barWidth + barGap)/2)), canvasHeight, barWidth, -(income / (increment*numberOfLines) * canvasHeight))
+          drawRect(labels[1].color, (lineXOffset + (((canvasWidth - lineXOffset*2)/numberOfForms) * (i) + (barWidth + barGap)/2) + barWidth + barGap), canvasHeight, barWidth, -(wealth / (increment*numberOfLines) * canvasHeight))
+        }
+      }
+
+      // Make the whole graph
+      function main() {
+        // Canvas Settings
+        const canvasHeight = canvas.clientHeight;
+        const canvasWidth = canvas.clientWidth;
+        const lineXOffset = 100;
+        const lineYOffset = 1;
+        const increment = 100000;
+        const numberOfLines = 10;
+        const ratio = canvasHeight/numberOfLines;
+
+        // Label Settings
+        const labelMarginLeft = 10;
+        const labelMarginBottom = 10;
+        const labelWidth = 50;
+        const labelHeight = 30;
+        const labels = [
+          {
+            labelValue: 'Income',
+            color: 'red'
+          },
+          {
+            labelValue: 'Wealth',
+            color: 'blue'
+          }
+        ];
+
+        // Bar settings
+        const numberOfForms = 3;
+        const barWidth = 50;
+        const barGap = 5;
+
+        
+        createCanvas(canvasHeight, canvasWidth, lineXOffset, lineYOffset, increment, numberOfLines, ratio);
+        createLabels(labelMarginLeft, labelMarginBottom, labelWidth, labelHeight, labels, canvasWidth, canvasHeight, lineXOffset);
+        createBars(numberOfForms, canvasWidth, canvasHeight, barWidth, barGap, increment, numberOfLines, labels, lineXOffset);
+        
+      }
+
+      main();
+
+    </script>
+  </body>
+</html>

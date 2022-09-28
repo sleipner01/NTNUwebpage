@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taxPayers>
+    <person>
+        <name>Nick Odd</name>
+        <gender>Male</gender>
+        <email>nick@tick.com</email>
+        <birthyear>1976</birthyear>
+        <!-- Making hero information in its own section will allow the xml-fikle to be used on both regular persons and heroes. -->
+        <hero>
+            <spandex>Yes</spandex>
+            <strength>9</strength>
+            <speed>7</speed>
+            <intelligence>5</intelligence>
+        </hero>
+        <wealth>0</wealth>
+        <income>90287</income>
+        <tax>29794</tax>
+    </person>
+    <person>
+        <name>Bruce Wayne</name>
+        <gender>Male</gender>
+        <email>bruce@wayneenterprises.com</email>
+        <birthyear>1974</birthyear>
+        <hero>
+            <spandex>no</spandex>
+            <strength>7</strength>
+            <speed>4</speed>
+            <intelligence>9</intelligence>
+        </hero>
+        <wealth>50144501</wealth>
+        <income>3 343 891</income>
+        <tax>11132384</tax>
+    </person>
+    <person>
+        <name>Selina Kyle</name>
+        <gender>Female</gender>
+        <email>selina@whiskas.com</email>
+        <birthyear>1977</birthyear>
+        <hero>
+            <spandex>Yes</spandex>
+            <strength>6</strength>
+            <speed>6</speed>
+            <intelligence>9</intelligence>
+        </hero>
+        <wealth>2987323</wealth>
+        <income>0</income>
+        <tax>597464</tax>
+    </person>
+    <person>
+        <name>Tony Stark</name>
+        <gender>Male</gender>
+        <email>tony@stark.com</email>
+        <birthyear>10.05.1967</birthyear>
+        <hero>
+            <spandex>No</spandex>
+            <strength>9</strength>
+            <speed>6</speed>
+            <intelligence>10</intelligence>
+        </hero>
+        <wealth>50123987672098</wealth>
+        <income>108764678</income>
+        <tax>1</tax>
+    </person>
+</taxPayers>

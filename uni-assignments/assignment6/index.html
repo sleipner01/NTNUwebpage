@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tax form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="media/favicon.png" type="image/png">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Hero information</h2>
+            <p class="terms">Everything marked with * has to be answered</p>
+            <form action="https://folk.ntnu.no/anderobs/webtek/receive_form.php" method="post">
+                
+                <!-- General information -->
+                <div class="general-info">
+                    <div class="input-wrapper">
+                        <label for="name" class="required">Real name:</label>
+                        <input type="text" name="name" id="name" placeholder="Tony Stark" required>
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <label for="gender" class="required">Gender:</label>
+                        <select name="gender" id="gender" required>
+                            <option selected disabled hidden value="">Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <label for="email" class="required">E-mail:</label>
+                        <input type="email" name="email" id="email" placeholder="tony@stark.com" required>
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <label for="birthdate" class="required">Birthdate:</label>
+                        <input type="date" name="birthdate" id="birthdate" max="1987-12-31" required>
+                        <p class="sub-text">Dates after 31-12-1987 are not valid</p>
+                    </div>
+                </div>
+
+                <!-- Dividing line -->
+                <hr><br>
+
+
+                <!-- Superhero stats -->
+                <div class="input-wrapper">
+                    <label for="hero" class="required">Hero name:</label>
+                    <input type="text" name="hero" id="hero" placeholder="Iron Man" required>
+                </div>
+                <br>
+
+                <label class="required">Do you wear spandex?</label>
+                <br>
+                <label for="wearing_spandex">Yes</label>
+                <input type="radio" name="spandex" id="wearing_spandex" required>
+                
+                <label for="no_spandex">No</label>
+                <input type="radio" name="spandex" id="no_spandex">
+                <br><br>
+
+
+                <!-- Here I chose range inputs, however, number fields will work fine as well since we can limit the input-number to only allow for numbers within the assigned range -->
+                <!-- I thought the range inputs looked well in my form, including that it gives a proper visual representation to the user/hero about their stats -->
+                <!-- Tickmarks for the range inputs -->
+                <datalist id="tickmarks">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+                    <option value="10"></option>
+                </datalist>
+
+                <div class="input-wrapper">
+                    <label for="strength" class="required">Strength:</label>
+                    <!-- Since no Javascript can be used -->
+                    <!-- <output id="strength_value" name="strength_value" for="strength"></output> -->
+                    <div>
+                        <span>1</span>
+                        <input type="range" name="strength" id="strength" list="tickmarks" min="1" max="10" step="1"> <!-- oninput="document.getElementById('strength_value').innerHTML = this.value;" -->
+                        <span>10</span>
+                    </div>
+                </div>
+                <br>
+                    <div class="input-wrapper">
+                    <label for="speed" class="required">Speed:</label>
+                    <!-- <output id="speed_value" name="speed_value" for="speed"></output> -->
+                    <div>
+                        <span>1</span>
+                        <input type="range" name="speed" id="speed" list="tickmarks" min="1" max="10" step="1"> <!-- oninput="document.getElementById('speed_value').innerHTML = this.value;" -->
+                        <span>10</span>
+                    </div>
+                </div>
+                <br>
+                <div class="input-wrapper">
+                    <label for="intelligence" class="required">Intelligence:</label>
+                    <output id="intelligence_value" name="intelligence_value" for="intelligence"></output>
+                    <div>
+                        <span>1</span>
+                        <input type="range" name="intelligence" id="intelligence" list="tickmarks" min="1" max="10" step="1"> <!-- oninput="document.getElementById('intelligence_value').innerHTML = this.value;" -->
+                        <span>10</span>
+                    </div>
+                </div>
+
+                <!-- Dividing line -->
+                <hr><br>
+
+
+                <!-- Economy input field -->
+                <div class="economy-info">
+                    <div class="input-wrapper">
+                        <label for="income" class="required">Income</label>
+                        <input type="number" name="income" id="income"  min="0" required oninput="countTax()">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <label for="wealth" class="required">Wealth</label>
+                        <input type="number" name="wealth" id="wealth" min="0" required oninput="countTax()">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <label for="tax">Tax</label>
+                        <input type="number" name="tax" id="tax" disabled>
+                    </div>
+                </div>
+
+                <input id="submit" type="submit" value="Submit tax form">
+            </form>
+        </div>
+
+        <script src="js/tax.js"></script>
+    </body>
+</html>

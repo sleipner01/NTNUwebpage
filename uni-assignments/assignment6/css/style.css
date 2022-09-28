@@ -1,0 +1,159 @@
+/* Getting custom font from Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin:0;
+    padding:0;
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: white;
+    background-color: #243b55; /* backup background for browsers that don't support gradients */
+    background: linear-gradient(#141e30, #243b55);
+}
+
+/* Currently global classes */
+.required::after { 
+    content: "*";
+    color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+
+/* Personalia form */
+.container {
+    margin: 50px auto;
+    width: 800px;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+    .container h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .container .terms {
+        text-align: center;
+        color: #555;
+        font-size: 1em;
+        font-weight: 300;
+    }
+    .container .sub-text{
+        text-align: center;
+        color: #555;
+        font-size: .9em;
+        font-weight: 300;
+    }
+
+    .container .general-info, .container .economy-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container .general-info .input-wrapper, .container .economy-info .input-wrapper {
+        flex-basis: 50%;
+    }
+
+    .container .input-wrapper input, .container .input-wrapper select {
+        display: block;
+        width: 90%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+    }
+
+    /* Input valid?  If I want the red border to show I have to put it under the white border
+    Currently the red border won't show unless we use Javascript*/
+    .container .input-wrapper input:invalid {
+        border-bottom: 1px solid red;
+    }
+    .container .input-wrapper input:empty, .container .input-wrapper select:invalid {
+        border-bottom: 1px solid white;
+    }
+    .container .input-wrapper input:valid, .container .input-wrapper select:valid {
+        border-bottom: 1px solid green;
+    }
+
+    .container .input-wrapper select option {
+        background-color: #141e30;
+        font-size: 16px;
+        color: white;
+    }
+
+    .container .input-wrapper input[type="range"] {
+        display: inline-block;
+    }
+
+    /* Making sure the user gets a pointer when hovering over these input elements */
+    .container .input-wrapper select:hover,
+    .container .input-wrapper input[type="date"]:hover,
+    .container .input-wrapper input[type="range"]:hover,
+    .container input[type="radio"]:hover {
+        cursor: pointer;
+    }
+
+    .container .input-wrapper label {
+        padding: 10px 0;
+        color: #fff;
+    }
+
+    .container form #submit {
+        padding: 10px 20px;
+        color: white;
+        background-color: transparent;
+        font-size: 1em;
+        font-weight: 300;
+        transition: .2s;
+        letter-spacing: 2px;
+        border: 1px white solid;
+        border-radius: 5px;
+    }
+
+    .container #submit:hover {
+        background: white;
+        color: black;
+    }
+
+
+
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 1em;
+    }
+    
+    .container {
+        width: 400px;
+    }
+
+    .container .general-info .input-wrapper, .container .economy-info .input-wrapper {
+        flex-basis: 100%;
+    }
+
+    .container .input-wrapper input[type="range"] {
+        width: 85%;
+    }
+
+    .container .input-wrapper input, .container .input-wrapper select {
+        width: 100%;
+    }
+}
