@@ -261,8 +261,8 @@ section {
 }
 
 
-/* SECTION: Popular */
-.popular {
+/* SECTION: Projects */
+.projects {
     position: relative;
     margin: 0 auto;
     height: 900px;
@@ -270,7 +270,7 @@ section {
     font-weight: 300;
 }
 
-    .popular-top div {
+    .projects-top div {
         margin: 0 auto;
         width: 170px;
         padding: 10px;
@@ -278,44 +278,44 @@ section {
         text-align: center;
     }
 
-    .popular-beats {
+    .projects-table {
         background-color: rgba(0, 0, 0, 0);
         width: 100%;
     }
 
-        .popular table {
+        .projects table {
             border-collapse: collapse;
             margin: 0 auto;
             width: 100%;
         }
         
-        .popular table tbody tr {
+        .projects table tbody tr {
             transition: 60ms ease-in-out;
             height: 70px;
         }
 
-            .popular table tbody tr:hover {
+            .projects table tbody tr:hover {
                 background-color: rgba(45, 0, 41, 0.3);
             }
 
-            .popular table tbody tr td, .popular table thead tr th {
+            .projects table tbody tr td, .projects table thead tr th {
                 text-align: center;
             }
 
-            .popular table tbody tr td:nth-child(2), .popular table thead tr th:nth-child(2) {
+            .projects table tbody tr td:nth-child(2), .projects table thead tr th:nth-child(2) {
                 text-align: left;
                 padding-left: 20px;
             }
 
-            .popular table tbody tr td:first-child {
+            .projects table tbody tr td:first-child {
                 width: 60px;
             }
 
-            .popular table tbody tr td:last-child, .popular table thead tr th:last-child {
+            .projects table tbody tr td:last-child, .projects table thead tr th:last-child {
                 text-align: right;
             }
 
-            .popular table thead tr th {
+            .projects table thead tr th {
                 border-bottom: 1px solid rgba(42, 42, 42, 0.5);
                 padding-bottom: 10px;
             }
