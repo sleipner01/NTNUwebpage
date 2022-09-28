@@ -133,6 +133,7 @@ body {
 
         .headline h1 {
             position: relative;
+            font-weight: 300;
             top: -100px;
             text-align: center;
             font-size: 4em;
