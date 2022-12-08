@@ -1,7 +1,0 @@
-1. The inline style CSS overrides "style" elements and external stylesheets because it is considered by the browser to be more spesific.
-
-2. -ID is best used when referencing something spesific on a page. For example spesific parts of a page, elements mentioning- or doing something spesific. That could be a navbar, the picture of the tea, or the intro of the article.
-   -Class is best used the styling can be reused elsewhere. If I have a section with width: 300px and background-color: lightgray, and want to make to more sections looking the same, I can give all the sections the same class. They will get the same styling with less coding needed.
-3. RGBA is a function to express color with opacity. Written rgba(x(amount of red), y(amount of green), z(amound of blue), o(decimal/percentage of the opacity)), the different values will give different colors. The opacity value makes the color slightly og completely transparent which lets anything that lies beneath shine through. It is possible to pick between 16 581 375 different colours.
-4. We include the CSS files inside the head because the data is not a part of the body. CSS describes how the body-elements should look, but the data is no element by itself.
-5. The CSS selector that matches all the p elements inside the article is: "article p {}"  
